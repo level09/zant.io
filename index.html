@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANT</title>
+    <meta name="description" content="You already know what this is.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div id="three-hero" class="hero__three"></div>
+        <div class="hero__bg"></div>
+        <div class="hero__grid"></div>
+
+        <div class="hero__content">
+            <div class="hero__label">
+                <span>◢ Status: Observing</span>
+            </div>
+
+            <h1 class="hero__title t-massive">
+                <span class="hero__title-line">
+                    <span class="hero__title-text glitch" data-text="SIGNAL">SIGNAL</span>
+                </span>
+                <span class="hero__title-line">
+                    <span class="hero__title-text">FROM</span>
+                </span>
+                <span class="hero__title-line">
+                    <span class="hero__title-text" style="color: var(--signal)">VOID</span>
+                </span>
+            </h1>
+
+            <p class="hero__subtitle">
+                <span class="t-serif">You already know what this is.</span>
+                <br><br>
+                If you don't, it's not for you.
+            </p>
+
+            <a href="#pillars" class="hero__cta">
+                <span>↓</span>
+                <span class="hero__cta-arrow"></span>
+            </a>
+        </div>
+
+        <div class="hero__scroll">
+            <span>Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="manifesto reveal">
+        <div class="manifesto__content">
+            <blockquote class="manifesto__quote">
+                "The delta between knowing and deciding is where fortunes evaporate."
+            </blockquote>
+            <p class="manifesto__text">
+                Everyone has access.
+                <br>
+                No one has leverage.
+                <br><br>
+                The asymmetry isn't information.
+                <br>
+                <strong>It never was.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Four Pillars -->
+    <section class="pillars reveal" id="pillars">
+        <div class="pillars__header">
+            <span class="pillars__number">04</span>
+            <h2 class="pillars__title t-medium">Primitives</h2>
+        </div>
+
+        <div class="pillars__grid">
+            <article class="pillar">
+                <div class="pillar__index">01</div>
+                <h3 class="pillar__name">Compression</h3>
+                <p class="pillar__desc">
+                    n → 1
+                </p>
+                <svg class="pillar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </article>
+
+            <article class="pillar">
+                <div class="pillar__index">02</div>
+                <h3 class="pillar__name">Delta</h3>
+                <p class="pillar__desc">
+                    Δ before consensus
+                </p>
+                <svg class="pillar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M13 17l5-5-5-5M6 17l5-5-5-5"/>
+                </svg>
+            </article>
+
+            <article class="pillar">
+                <div class="pillar__index">03</div>
+                <h3 class="pillar__name">Capture</h3>
+                <p class="pillar__desc">
+                    Intent frozen at t₀
+                </p>
+                <svg class="pillar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </article>
+
+            <article class="pillar">
+                <div class="pillar__index">04</div>
+                <h3 class="pillar__name">Loop</h3>
+                <p class="pillar__desc">
+                    f(outcome) → judgment
+                </p>
+                <svg class="pillar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+            </article>
+        </div>
+    </section>
+
+    <!-- Anti-Features -->
+    <section class="anti reveal">
+        <div class="anti__content">
+            <div class="anti__header">
+                <h2 class="anti__title t-large">≠</h2>
+                <p class="anti__subtitle">Negation as definition.</p>
+            </div>
+
+            <ul class="anti__list">
+                <li class="anti__item">
+                    <span class="anti__strike">×</span>
+                    <span class="anti__text">Consumption theater</span>
+                </li>
+                <li class="anti__item">
+                    <span class="anti__strike">×</span>
+                    <span class="anti__text">Synthetic comprehension</span>
+                </li>
+                <li class="anti__item">
+                    <span class="anti__strike">×</span>
+                    <span class="anti__text">Observation without consequence</span>
+                </li>
+                <li class="anti__item">
+                    <span class="anti__strike">×</span>
+                    <span class="anti__text">The feeling of knowing</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Terminal Demo -->
+    <section class="terminal reveal">
+        <div class="terminal__header">
+            <h2 class="terminal__title t-large">—</h2>
+            <p class="terminal__subtitle"></p>
+        </div>
+
+        <div class="terminal__window">
+            <div class="terminal__bar">
+                <div class="terminal__dot terminal__dot--red"></div>
+                <div class="terminal__dot terminal__dot--yellow"></div>
+                <div class="terminal__dot terminal__dot--green"></div>
+                <div class="terminal__title-bar">zant</div>
+            </div>
+            <div class="terminal__body">
+                <div class="terminal__line">
+                    <span class="terminal__prompt">◢</span>
+                    <span class="terminal__command"> observe</span>
+                </div>
+                <div class="terminal__line terminal__output">
+                    [...]
+                </div>
+                <div class="terminal__line terminal__output">
+                    2,847 → 12
+                </div>
+                <div class="terminal__line terminal__output terminal__success">
+                    Δ detected
+                </div>
+                <div class="terminal__line">
+                    <span class="terminal__prompt">◢</span>
+                    <span class="terminal__command"> capture</span>
+                </div>
+                <div class="terminal__line terminal__output terminal__success">
+                    t₀ = 2024-12-27T09:42:00Z
+                </div>
+                <div class="terminal__line terminal__output">
+                    irreversible
+                </div>
+                <div class="terminal__line">
+                    <span class="terminal__prompt">◢</span>
+                    <span class="terminal__cursor"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta reveal">
+        <div class="cta__content">
+            <h2 class="cta__title t-huge">
+                <span class="glitch" data-text="—">—</span>
+            </h2>
+            <p class="cta__text">
+                The best time to decide was yesterday.
+                <br>
+                The second best time is before you forget why it mattered.
+            </p>
+            <div class="cta__buttons">
+                <a href="#" class="cta__button cta__button--primary">
+                    <span>Request Access</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="/" class="footer__brand">◢ ZANT</a>
+        <nav class="footer__links">
+        </nav>
+        <span class="footer__copy">For those who ship irreversibly</span>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/three-hero.js"></script>
+</body>
+</html>
