@@ -871,3 +871,310 @@ body::after {
         border-bottom: none;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CUSTOM CURSOR
+   ═══════════════════════════════════════════════════════════════ */
+.custom-cursor {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    mix-blend-mode: difference;
+}
+
+.cursor-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--signal);
+    border-radius: 50%;
+    margin: -3px 0 0 -3px;
+    transition: width 0.2s, height 0.2s, margin 0.2s;
+}
+
+.cursor-ring {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--signal);
+    border-radius: 50%;
+    margin: -20px 0 0 -20px;
+    opacity: 0.5;
+    transition: width 0.3s, height 0.3s, margin 0.3s, opacity 0.3s, border-width 0.3s;
+}
+
+.cursor-hover .cursor-dot {
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    background: var(--signal);
+}
+
+.cursor-hover .cursor-ring {
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    opacity: 1;
+    border-width: 2px;
+}
+
+/* Hide default cursor on desktop */
+@media (hover: hover) {
+    body {
+        cursor: none !important;
+    }
+    a, button, .pillar, .anti__item {
+        cursor: none !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   AMBIENT PARTICLES CANVAS
+   ═══════════════════════════════════════════════════════════════ */
+.ambient-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ENHANCED PILLAR EFFECTS
+   ═══════════════════════════════════════════════════════════════ */
+.pillar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        var(--signal-dim) 0%,
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.pillar:hover::after {
+    opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLITCH HOVER EFFECT
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes glitch-skew {
+    0% { transform: skewX(0deg); }
+    20% { transform: skewX(-2deg); }
+    40% { transform: skewX(2deg); }
+    60% { transform: skewX(-1deg); }
+    80% { transform: skewX(1deg); }
+    100% { transform: skewX(0deg); }
+}
+
+.glitch-hover {
+    animation: glitch-skew 0.2s ease;
+}
+
+.pillar__name {
+    transition: text-shadow 0.2s ease, letter-spacing 0.3s ease;
+}
+
+.pillar:hover .pillar__name {
+    letter-spacing: 0.05em;
+    text-shadow:
+        2px 0 var(--signal),
+        -2px 0 var(--danger);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEXT SCRAMBLE EFFECT
+   ═══════════════════════════════════════════════════════════════ */
+.scramble-char {
+    color: var(--signal);
+    opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   STAGGER ANIMATION
+   ═══════════════════════════════════════════════════════════════ */
+.stagger {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stagger-visible {
+    animation: staggerIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes staggerIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ENHANCED ANTI ITEMS
+   ═══════════════════════════════════════════════════════════════ */
+.anti__item {
+    position: relative;
+    overflow: hidden;
+}
+
+.anti__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--danger-dim), transparent);
+    transition: width 0.3s ease;
+}
+
+.anti__item:hover::before {
+    width: 100%;
+}
+
+.anti__strike {
+    transition: transform 0.2s ease;
+}
+
+.anti__item:hover .anti__strike {
+    transform: scale(1.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTON TRANSITIONS
+   ═══════════════════════════════════════════════════════════════ */
+.hero__cta,
+.cta__button {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.hero__cta span,
+.cta__button span {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ENHANCED REVEAL ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition:
+        opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Manifesto special reveal */
+.manifesto.visible .manifesto__quote {
+    animation: slideFromLeft 1s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.manifesto.visible .manifesto__text {
+    animation: fadeUp 1s 0.5s both;
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pillars stagger */
+.pillars.visible .pillar {
+    animation: pillarsIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pillars.visible .pillar:nth-child(1) { animation-delay: 0.1s; }
+.pillars.visible .pillar:nth-child(2) { animation-delay: 0.2s; }
+.pillars.visible .pillar:nth-child(3) { animation-delay: 0.3s; }
+.pillars.visible .pillar:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes pillarsIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Anti items stagger */
+.anti.visible .anti__item {
+    animation: antiIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anti.visible .anti__item:nth-child(1) { animation-delay: 0.1s; }
+.anti.visible .anti__item:nth-child(2) { animation-delay: 0.2s; }
+.anti.visible .anti__item:nth-child(3) { animation-delay: 0.3s; }
+.anti.visible .anti__item:nth-child(4) { animation-delay: 0.4s; }
+.anti.visible .anti__item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes antiIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FLOATING ELEMENTS
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.pillar__icon {
+    animation: float 4s ease-in-out infinite;
+}
+
+.pillar:nth-child(2) .pillar__icon { animation-delay: -1s; }
+.pillar:nth-child(3) .pillar__icon { animation-delay: -2s; }
+.pillar:nth-child(4) .pillar__icon { animation-delay: -3s; }
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION DIVIDER LINES
+   ═══════════════════════════════════════════════════════════════ */
+.manifesto::after,
+.terminal::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: var(--space-lg);
+    right: var(--space-lg);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--signal-dim), transparent);
+    transform: scaleX(0);
+    transition: transform 1s ease;
+}
+
+.manifesto.visible::after,
+.terminal.visible::after {
+    transform: scaleX(1);
+}
