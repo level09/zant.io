@@ -368,6 +368,21 @@
     }
 
     // ═══════════════════════════════════════════════════════════════
+    // OBFUSCATED EMAIL LINKS
+    // Decode on click to prevent spam scraping
+    // ═══════════════════════════════════════════════════════════════
+    function initContactLinks() {
+        document.querySelectorAll('[data-contact]').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                const email = atob(el.dataset.contact);
+                const subject = el.dataset.subject ? atob(el.dataset.subject) : '';
+                window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+            });
+        });
+    }
+
+    // ═══════════════════════════════════════════════════════════════
     // INITIALIZE
     // ═══════════════════════════════════════════════════════════════
     function init() {
@@ -379,6 +394,7 @@
         initPillarEffects();
         initGlitchHover();
         initTerminalEffect();
+        initContactLinks();
 
         // Add scramble data attributes to key elements
         document.querySelectorAll('.manifesto__quote').forEach(el => {
